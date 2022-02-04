@@ -14,6 +14,11 @@ const root = new Vue({
                 console.log(res.data.response);
             });
         },
+        getRandomEmails(emails) {
+            for (let i = 0; i < emails; i++) {
+                this.getRandomEmail();
+            }
+        }
 
     },
 
