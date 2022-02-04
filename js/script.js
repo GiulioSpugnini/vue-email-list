@@ -10,8 +10,8 @@ const root = new Vue({
     methods: {
         getRandomEmail() {
             axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then(res => {
-
-                this.emails.push(res.data.response);
+                if (!this.emails.includes(res.data.response)) //controllo se esiste gia una mail nell'array
+                    this.emails.push(res.data.response);
                 console.log(res.data.response);
             });
         },
