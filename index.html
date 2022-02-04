@@ -13,8 +13,10 @@
 
 <body>
     <div id="root">
-        <div>
-            {{emails}}
+        <div v-if='emails.length===totalEmails'>
+            <ul>
+                <li v-for='email in emails'>{{email}}</li>
+            </ul>
         </div>
     </div>
     <script src="js/script.js"></script>
